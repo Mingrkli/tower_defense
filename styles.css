@@ -1,0 +1,27 @@
+body {
+    background: black;
+}
+
+#canvas1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 600px;
+    background: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+h1:first-child{
+    color: teal;
+    text-align: center;
+}
+
+h1, li {
+    color: white;
+}
+
+li {
+    list-style: none;
+}
