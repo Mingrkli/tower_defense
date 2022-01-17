@@ -143,7 +143,7 @@ class Defender {
         if (this.shooting){
             this.timer++;
             // each defender has their own timer so that they don't shoot at the same time
-            if (this.timer % 100 === 0){
+            if (this.timer % 1 === 0){
                 projectiles.push(new Projectile(this.x + 70, this.y + 50));
             }
         } else {
@@ -201,7 +201,7 @@ function handleDefenders(){
         }
     }
 }
-// enemies
+// enemies =============================================================================================================
 class Enemy {
     constructor(verticalPosition){
         this.x = canvas.width;
