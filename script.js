@@ -7,7 +7,8 @@ canvas.height = 600;
 const cellSize = 100;
 const cellGap = 3;
 let numberOfResources = 300;
-let enemiesInterval = 600;
+// was 600
+let enemiesInterval = 100;
 let frame = 0;
 let gameOver = false;
 let score = 0;
@@ -209,7 +210,8 @@ class Enemy {
         // the following two made it so that the defender will shoot as the cell matches the condition to shoot
         this.width = cellSize - cellGap * 2;
         this.height = cellSize - cellGap * 2;
-        this.speed = Math.random() * 0.2 + 0.4;
+        //         this.speed = Math.random() * 0.2 + 0.4;
+        this.speed = Math.random() * 0.2 + 2;
         this.movement = this.speed;
         this.health = 100;
         // this here make it possible to change the reward depending on their max health
@@ -247,13 +249,14 @@ function handleEnemies(){
             i--;
         }
     }
-    // every enemiesInterval frames / 100 which equals to zero will spawn new enemies
+    // every enemiesInterval % frames which equals to zero will spawn new enemies
     if (frame % enemiesInterval === 0 && score < winningScore){
         let verticalPosition = Math.floor(Math.random() * 5 + 1) * cellSize + cellGap;
         enemies.push(new Enemy(verticalPosition));
         enemyPositions.push(verticalPosition);
         // everytime new enemies spawn enemiesInterval lower by 50 frames so the wave comes faster and faster
-        if (enemiesInterval > 120) enemiesInterval -= 50;
+        // if (enemiesInterval > 120) enemiesInterval -= 50;
+        if (enemiesInterval > 1) enemiesInterval -= 99;
     }
 }
 
